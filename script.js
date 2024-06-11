@@ -1,4 +1,4 @@
-const apiKey = "1b1b60c0";
+const apiKey = "bb154274";
 
 // Function to search for movies
 async function searchMovies(query) {
