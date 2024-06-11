@@ -1,7 +1,6 @@
 body {
-  /* background-image: url('bg1.jpg'); */
   background-color: black;
-  background-size: cover;
+  /* background-size: cover; */
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
@@ -39,15 +38,16 @@ a {
   text-align: center;
   margin: 0px;
   padding: 20px;
-  background-color: pink;
-  border: 1px solid #ccc;
+  background-color: black;
+  border: 3px solid #302c2c;
   border-radius: 5px;
+  width: 99%;
 }
 
 #quoteText {
   font-size: 20px;
   font-weight: bold;
-  color: #6d0d4d;
+  color: yellow;
   margin: 10px;
 }
 
@@ -128,7 +128,7 @@ nav {
 }
 
 .container {
-  background-color: rgb(251, 162, 162);
+  background-color: rgb(0, 0, 0);
   color: brown;
   font-weight: bold;
 }
@@ -137,14 +137,17 @@ nav {
   background-color: black;
   font-size: larger;
 }
-
+.navlogo {
+  background-color: #f8fc19;
+  margin-left: 0px;
+}
 .navbar-brand {
   font-size: 24px;
   color: black;
 }
 
 .navbar-nav .nav-link {
-  color: black;
+  color: whitesmoke;
   font-size: 20px;
 }
 
@@ -153,15 +156,15 @@ nav {
 }
 
 /* Highlight active nav link */
-/* .navbar-nav .nav-item.active .nav-link {
-    background-color: #007bff;
-    border-radius: 5px;
+.navbar-nav .nav-item.active .nav-link {
+  background-color: #007bff;
+  border-radius: 5px;
 }
 
 .navbar-nav .nav-item.active .nav-link:hover {
-    background-color: #0056b3;
-    border-radius: 5px;
-} */
+  background-color: #0056b3;
+  border-radius: 5px;
+}
 
 /* Search results styles */
 #searchResults .card {

@@ -3,12 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mini IMDB Clone</title>
+    <title>Movie Details</title>
     <!-- Bootstrap CSS -->
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
+
     <link rel="stylesheet" href="styles.css" />
     <link
       rel="icon"
@@ -21,39 +22,23 @@
         <div class="navlogo">
           <a class="navbar-brand" href="index.html">Mini IMDB'🍿💿</a>
         </div>
-
         <div class="collapse navbar-collapse">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
               <a class="nav-link" href="index.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="favourites.html">Favorites⭐</a>
+              <a class="nav-link" href="favourites.html">Favorites</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
+    <h2>Movie Details:</h2>
     <br />
-    <div class="quote-container">
-      <p id="quoteText"></p>
-    </div>
-
-    <div class="container mt-5">
-      <br />
-      <div class="form-group">
-        <input
-          type="text"
-          id="searchInput"
-          class="form-control"
-          placeholder="Search for movies.."
-        />
-        <button id="searchButton" class="btn btn-primary mt-2">Search</button>
-      </div>
-      <div id="searchResults" class="row mt-4"></div>
-    </div>
+    <div class="container mt-5" id="movieDetails"></div>
 
     <!-- JavaScript -->
-    <script src="script.js"></script>
+    <script src="movie.js"></script>
   </body>
 </html>
