@@ -11,13 +11,18 @@ async function searchMovies(query) {
 
 // Function to add a movie to favourites
 async function addToFavourites(event) {
-  const imdbID = event.target.dataset.imdbid;
-  const movie = await getMovieDetails(imdbID);
+  const imdbID = event.target.dataset.imdbid;// Extract IMDb ID from the event target's dataset
+  const movie = await getMovieDetails(imdbID);// Fetch movie details using the IMDb ID
+  // Check if movie details are successfully fetched
   if (movie) {
+     // Retrieve current favourites list from localStorage or initialize as empty array
     const favouritesList = JSON.parse(localStorage.getItem("favourites")) || [];
-    if (!favouritesList.some((m) => m.imdbID === movie.imdbID)) {
+    // Check if the movie is not already in the favourites list
+    if (!favouritesList.some((m) => m.imdbID === movie.imdbID)) { 
       favouritesList.push(movie);
+        // Update localStorage with the updated favourites list
       localStorage.setItem("favourites", JSON.stringify(favouritesList));
+       // Notify user that the movie has been added to favourites
       alert(`${movie.Title} has been added to your favourites!`);
     } else {
       alert(`${movie.Title} is already in your favourites!`);
@@ -29,10 +34,11 @@ async function addToFavourites(event) {
 function displaySearchResults(results) {
   const searchResultsContainer = document.getElementById("searchResults");
   searchResultsContainer.innerHTML = "";
-
+    // Iterate over each movie object in the results array
   results.forEach((movie) => {
-    const movieCard = document.createElement("div");
-    movieCard.classList.add("card", "col-md-4", "mb-4");
+    const movieCard = document.createElement("div");  // Create a new <div> element for each movie (card layout)
+    movieCard.classList.add("card", "col-md-4", "mb-4");   // Add Bootstrap classes to style the card
+     // Set inner HTML of the movie card with movie details
     movieCard.innerHTML = `
             <img src="${movie.Poster}" class="card-img-top" alt="${movie.Title}">
             <div class="card-body">
@@ -41,10 +47,11 @@ function displaySearchResults(results) {
                 <a href="movie.html?id=${movie.imdbID}" class="btn btn-secondary btn-sm more-button">More</a>
             </div>
         `;
-    searchResultsContainer.appendChild(movieCard);
+    searchResultsContainer.appendChild(movieCard);// Append the movie card to the search results container
   });
-
+ // Select all elements with class "favourite-button" (created in each movie card)
   const favouriteButtons = document.querySelectorAll(".favourite-button");
+   // Attach event listener to each favourite button
   favouriteButtons.forEach((button) => {
     button.addEventListener("click", addToFavourites);
   });
@@ -106,7 +113,7 @@ async function displayQuoteWordByWord() {
     quoteText.textContent = words.slice(0, i + 1).join(" ");
   }
 
-  // After displaying all words, wait for 10 seconds and then show the next quote
+  // After displaying all words, wait for 1 second and then show the next quote
   await new Promise((resolve) => setTimeout(resolve, 800));
   showNextQuote();
 }

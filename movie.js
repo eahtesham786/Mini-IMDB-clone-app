@@ -1,4 +1,4 @@
-const apiKey = "bb154274";
+const apiKey = "bb154274"; //omdb api key
 
 async function getMovieDetailsById(imdbID) {
   const response = await fetch(
